@@ -1,15 +1,13 @@
-function skillMember() {
-    // private
-    var _name = 'private';
-
-    // public
-    this.publicName = 'public';
-
-    this.setName = function (name) {
-        _name = name;
+function skillMember(){
+    var member = document.getElementById("member").value;
+    var memberError = document.getElementById("memberError");
+    var memberReg = /^[0-9]{1,2}$/;
+    if(!memberReg.test(member)){
+        memberError.innerHTML = "Please enter a valid number";
+        return false;
     }
-
-    this.getName = function () {
-        return _name;
+    else{
+        memberError.innerHTML = "";
     }
+    return true;
 }
